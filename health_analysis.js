@@ -75,14 +75,13 @@ function generateReport() {
     }
 }
 
-
 /** Fonction pour rechercher les informations sur les conditions médicales */
 function searchCondition() {
     const input = document.getElementById('conditionInput').value.toLowerCase();
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML = '';
 
-    fetch('../data/health_analysis_data.json')
+    fetch('./data/health_analysis_data.json')
         .then(response => response.json())
         .then(data => {
             const condition = data.conditions.find(item => item.name.toLowerCase() === input);
